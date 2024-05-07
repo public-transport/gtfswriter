@@ -1,6 +1,6 @@
 module github.com/public-transport/gtfswriter
 
-go 1.22.2
+go 1.20
 
 require (
 	github.com/klauspost/compress v1.17.8
