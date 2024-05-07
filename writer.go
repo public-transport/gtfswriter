@@ -11,9 +11,6 @@ import (
 	"compress/flate"
 	"errors"
 	"fmt"
-	"github.com/klauspost/compress/zip"
-	"github.com/public-transport/gtfsparser"
-	gtfs "github.com/public-transport/gtfsparser/gtfs"
 	"io"
 	"math"
 	"os"
@@ -22,6 +19,10 @@ import (
 	"sort"
 	"strconv"
 	"strings"
+
+	"github.com/klauspost/compress/zip"
+	"github.com/public-transport/gtfsparser"
+	gtfs "github.com/public-transport/gtfsparser/gtfs"
 )
 
 type EntAttr struct {
@@ -193,7 +194,7 @@ func (writer *Writer) writeAgencies(path string, feed *gtfsparser.Feed, attrs *[
 	file, e := writer.getFileForWriting(path, "agency.txt")
 
 	if e != nil {
-		return errors.New("Could not open required file agency.txt for writing")
+		return errors.New("could not open required file agency.txt for writing")
 	}
 
 	csvwriter := NewCsvWriter(file)
@@ -269,7 +270,7 @@ func (writer *Writer) writeFeedInfos(path string, feed *gtfsparser.Feed) (err er
 	file, e := writer.getFileForWriting(path, "feed_info.txt")
 
 	if e != nil {
-		return errors.New("Could not open required file feed_info.txt for writing")
+		return errors.New("could not open required file feed_info.txt for writing")
 	}
 
 	csvwriter := NewCsvWriter(file)
@@ -334,7 +335,7 @@ func (writer *Writer) writeStops(path string, feed *gtfsparser.Feed) (err error)
 	file, e := writer.getFileForWriting(path, "stops.txt")
 
 	if e != nil {
-		return errors.New("Could not open required file stops.txt for writing")
+		return errors.New("could not open required file stops.txt for writing")
 	}
 
 	csvwriter := NewCsvWriter(file)
@@ -449,7 +450,7 @@ func (writer *Writer) writeShapes(path string, feed *gtfsparser.Feed) (err error
 	file, e := writer.getFileForWriting(path, "shapes.txt")
 
 	if e != nil {
-		return errors.New("Could not open required file shapes.txt for writing")
+		return errors.New("could not open required file shapes.txt for writing")
 	}
 
 	csvwriter := NewCsvWriter(file)
@@ -530,7 +531,7 @@ func (writer *Writer) writeRoutes(path string, feed *gtfsparser.Feed, attrs *[]E
 	file, e := writer.getFileForWriting(path, "routes.txt")
 
 	if e != nil {
-		return errors.New("Could not open required file routes.txt for writing")
+		return errors.New("could not open required file routes.txt for writing")
 	}
 
 	csvwriter := NewCsvWriter(file)
@@ -624,7 +625,7 @@ func (writer *Writer) writeCalendar(path string, feed *gtfsparser.Feed) (err err
 	file, e := writer.getFileForWriting(path, "calendar.txt")
 
 	if e != nil {
-		return errors.New("Could not open required file calendar.txt for writing")
+		return errors.New("could not open required file calendar.txt for writing")
 	}
 
 	csvwriter := NewCsvWriter(file)
@@ -673,7 +674,7 @@ func (writer *Writer) writeCalendarDates(path string, feed *gtfsparser.Feed) (er
 	file, e := writer.getFileForWriting(path, "calendar_dates.txt")
 
 	if e != nil {
-		return errors.New("Could not open required file calendar_dates.txt for writing")
+		return errors.New("could not open required file calendar_dates.txt for writing")
 	}
 
 	csvwriter := NewCsvWriter(file)
@@ -713,7 +714,7 @@ func (writer *Writer) writeTrips(path string, feed *gtfsparser.Feed, attrs *[]En
 	file, e := writer.getFileForWriting(path, "trips.txt")
 
 	if e != nil {
-		return errors.New("Could not open required file trips.txt for writing")
+		return errors.New("could not open required file trips.txt for writing")
 	}
 
 	csvwriter := NewCsvWriter(file)
@@ -861,7 +862,7 @@ func (writer *Writer) writeStopTimes(path string, feed *gtfsparser.Feed) (err er
 	file, e := writer.getFileForWriting(path, "stop_times.txt")
 
 	if e != nil {
-		return errors.New("Could not open required file stop_times.txt for writing")
+		return errors.New("could not open required file stop_times.txt for writing")
 	}
 
 	csvwriter := NewCsvWriter(file)
@@ -945,7 +946,7 @@ func (writer *Writer) writeFareAttributes(path string, feed *gtfsparser.Feed) (e
 	file, e := writer.getFileForWriting(path, "fare_attributes.txt")
 
 	if e != nil {
-		return errors.New("Could not open required file fare_attributes.txt for writing")
+		return errors.New("could not open required file fare_attributes.txt for writing")
 	}
 
 	csvwriter := NewCsvWriter(file)
@@ -1014,7 +1015,7 @@ func (writer *Writer) writeFareAttributeRules(path string, feed *gtfsparser.Feed
 	file, e := writer.getFileForWriting(path, "fare_rules.txt")
 
 	if e != nil {
-		return errors.New("Could not open required file fare_rules.txt for writing")
+		return errors.New("could not open required file fare_rules.txt for writing")
 	}
 
 	csvwriter := NewCsvWriter(file)
@@ -1088,7 +1089,7 @@ func (writer *Writer) writeFrequencies(path string, feed *gtfsparser.Feed) (err 
 	file, e := writer.getFileForWriting(path, "frequencies.txt")
 
 	if e != nil {
-		return errors.New("Could not open required file frequencies.txt for writing")
+		return errors.New("could not open required file frequencies.txt for writing")
 	}
 
 	csvwriter := NewCsvWriter(file)
@@ -1154,7 +1155,7 @@ func (writer *Writer) writeTransfers(path string, feed *gtfsparser.Feed) (err er
 	file, e := writer.getFileForWriting(path, "transfers.txt")
 
 	if e != nil {
-		return errors.New("Could not open required file transfers.txt for writing")
+		return errors.New("could not open required file transfers.txt for writing")
 	}
 
 	csvwriter := NewCsvWriter(file)
@@ -1242,7 +1243,7 @@ func (writer *Writer) writeLevels(path string, feed *gtfsparser.Feed) (err error
 	file, e := writer.getFileForWriting(path, "levels.txt")
 
 	if e != nil {
-		return errors.New("Could not open required file levels.txt for writing")
+		return errors.New("could not open required file levels.txt for writing")
 	}
 
 	csvwriter := NewCsvWriter(file)
@@ -1296,7 +1297,7 @@ func (writer *Writer) writePathways(path string, feed *gtfsparser.Feed) (err err
 	file, e := writer.getFileForWriting(path, "pathways.txt")
 
 	if e != nil {
-		return errors.New("Could not open required file pathways.txt for writing")
+		return errors.New("could not open required file pathways.txt for writing")
 	}
 
 	csvwriter := NewCsvWriter(file)
@@ -1367,7 +1368,7 @@ func (writer *Writer) writeAttributions(path string, feed *gtfsparser.Feed, attr
 	file, e := writer.getFileForWriting(path, "attributions.txt")
 
 	if e != nil {
-		return errors.New("Could not open required file attributions.txt for writing")
+		return errors.New("could not open required file attributions.txt for writing")
 	}
 
 	csvwriter := NewCsvWriter(file)
