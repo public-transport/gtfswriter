@@ -1,4 +1,4 @@
-[![Go Report Card](https://goreportcard.com/badge/github.com/patrickbr/gtfswriter)](https://goreportcard.com/report/github.com/patrickbr/gtfswriter) [![Build Status](https://travis-ci.org/patrickbr/gtfswriter.svg?branch=master)](https://travis-ci.org/patrickbr/gtfswriter) [![GoDoc](https://godoc.org/github.com/patrickbr/gtfswriter?status.png)](https://godoc.org/github.com/patrickbr/gtfswriter)
+[![Go Report Card](https://goreportcard.com/badge/github.com/public-transport/gtfswriter)](https://goreportcard.com/report/github.com/public-transport/gtfswriter) [![GoDoc](https://godoc.org/github.com/public-transport/gtfswriter?status.png)](https://godoc.org/github.com/public-transport/gtfswriter)
 
 # go gtfswriter
 
