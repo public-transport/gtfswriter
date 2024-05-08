@@ -240,7 +240,7 @@ func (writer *Writer) writeAgencies(path string, feed *gtfsparser.Feed, attrs *[
 			email = v.Email.Address
 		}
 
-		row := []string{v.Id, strings.Replace(v.Name, "\n", " ", -1), url, v.Timezone.GetTzString(), v.Lang.GetLangString(), v.Phone, fareurl, email}
+		row := []string{v.Id, strings.Replace(v.Name, "\n", " ", -1), url, v.Timezone.String(), v.Lang.GetLangString(), v.Phone, fareurl, email}
 
 		for _, name := range addFieldsOrder {
 			if vald, ok := feed.AgenciesAddFlds[name][v.Id]; ok {
@@ -387,9 +387,9 @@ func (writer *Writer) writeStops(path string, feed *gtfsparser.Feed) (err error)
 		row := make([]string, 0)
 
 		if v.HasLatLon() {
-			row = []string{strings.Replace(v.Name, "\n", " ", -1), parentStID, v.Code, v.Zone_id, v.Id, strings.Replace(v.Desc, "\n", " ", -1), writer.formatFloat(v.Lat), writer.formatFloat(v.Lon), url, posIntToString(locType), v.Timezone.GetTzString(), posIntToString(int(wb)), levelId, v.Platform_code}
+			row = []string{strings.Replace(v.Name, "\n", " ", -1), parentStID, v.Code, v.Zone_id, v.Id, strings.Replace(v.Desc, "\n", " ", -1), writer.formatFloat(v.Lat), writer.formatFloat(v.Lon), url, posIntToString(locType), v.Timezone.String(), posIntToString(int(wb)), levelId, v.Platform_code}
 		} else {
-			row = []string{strings.Replace(v.Name, "\n", " ", -1), parentStID, v.Code, v.Zone_id, v.Id, strings.Replace(v.Desc, "\n", " ", -1), "", "", url, posIntToString(locType), v.Timezone.GetTzString(), posIntToString(int(wb)), levelId, v.Platform_code}
+			row = []string{strings.Replace(v.Name, "\n", " ", -1), parentStID, v.Code, v.Zone_id, v.Id, strings.Replace(v.Desc, "\n", " ", -1), "", "", url, posIntToString(locType), v.Timezone.String(), posIntToString(int(wb)), levelId, v.Platform_code}
 		}
 
 		for _, name := range addFieldsOrder {
