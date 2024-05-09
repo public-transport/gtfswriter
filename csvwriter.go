@@ -8,7 +8,8 @@ package gtfswriter
 import (
 	"encoding/csv"
 	"io"
-	"sort"
+
+	"github.com/twotwotwo/sorts"
 )
 
 // Lines describes a slice of slice-encoded CSV lines
@@ -118,7 +119,7 @@ func (p *CsvWriter) HeaderUsage(val []string) {
 
 // SortByCols sorts the current line cache by depth
 func (p *CsvWriter) SortByCols(depth int) {
-	sort.Sort(SortedLines{p.lines, depth})
+	sorts.Quicksort(SortedLines{p.lines, depth})
 }
 
 // Flush the current line cache into the CSV file
