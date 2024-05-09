@@ -14,7 +14,6 @@ import (
 	"math"
 	"os"
 	opath "path"
-	"runtime"
 	"sort"
 	"strconv"
 	"strings"
@@ -57,63 +56,48 @@ func (writer *Writer) Write(feed *gtfsparser.Feed, path string) error {
 	if e == nil {
 		e = writer.writeFeedInfos(path, feed)
 	}
-	runtime.GC()
 	if e == nil {
 		e = writer.writeStops(path, feed)
 	}
-	runtime.GC()
 	if e == nil {
 		e = writer.writeShapes(path, feed)
 	}
-	runtime.GC()
 	if e == nil {
 		e = writer.writeRoutes(path, feed, &attributions)
 	}
-	runtime.GC()
 	if e == nil {
 		e = writer.writeCalendar(path, feed)
 	}
-	runtime.GC()
 	if e == nil {
 		e = writer.writeCalendarDates(path, feed)
 	}
-	runtime.GC()
 	if e == nil {
 		e = writer.writeTrips(path, feed, &attributions)
 	}
-	runtime.GC()
 	if e == nil {
 		e = writer.writeStopTimes(path, feed)
 	}
-	runtime.GC()
 	if e == nil {
 		e = writer.writeFareAttributes(path, feed)
 	}
-	runtime.GC()
 	if e == nil {
 		e = writer.writeFareAttributeRules(path, feed)
 	}
-	runtime.GC()
 	if e == nil {
 		e = writer.writeFrequencies(path, feed)
 	}
-	runtime.GC()
 	if e == nil {
 		e = writer.writeTransfers(path, feed)
 	}
-	runtime.GC()
 	if e == nil {
 		e = writer.writeLevels(path, feed)
 	}
-	runtime.GC()
 	if e == nil {
 		e = writer.writePathways(path, feed)
 	}
-	runtime.GC()
 	if e == nil {
 		e = writer.writeAttributions(path, feed, attributions)
 	}
-	runtime.GC()
 
 	if e != nil {
 		return e
