@@ -368,7 +368,7 @@ func (writer *Writer) writeStops(path string, feed *gtfsparser.Feed) (err error)
 			levelId = v.Level.Id
 		}
 
-		row := make([]string, 0)
+		var row []string
 
 		if v.HasLatLon() {
 			row = []string{strings.Replace(v.Name, "\n", " ", -1), parentStID, v.Code, v.Zone_id, v.Id, strings.Replace(v.Desc, "\n", " ", -1), writer.formatFloat(v.Lat), writer.formatFloat(v.Lon), url, posIntToString(locType), v.Timezone.String(), posIntToString(int(wb)), levelId, v.Platform_code}
@@ -739,7 +739,7 @@ func (writer *Writer) writeTrips(path string, feed *gtfsparser.Feed, attrs *[]En
 			ba = -1
 		}
 
-		row := make([]string, 0)
+		var row []string
 
 		blockid := ""
 		shortname := ""
@@ -1027,7 +1027,7 @@ func (writer *Writer) writeFareAttributeRules(path string, feed *gtfsparser.Feed
 
 	for _, v := range feed.FareAttributes {
 		for _, r := range v.Rules {
-			row := make([]string, 0)
+			var row []string
 
 			if r.Route == nil {
 				row = []string{v.Id, "", r.Origin_id, r.Destination_id, r.Contains_id}
@@ -1104,7 +1104,7 @@ func (writer *Writer) writeFrequencies(path string, feed *gtfsparser.Feed) (err 
 			continue
 		}
 		for _, f := range *v.Frequencies {
-			row := make([]string, 0)
+			var row []string
 			if !f.Exact_times {
 				row = []string{v.Id, timeToString(f.Start_time), timeToString(f.End_time), posIntToString(f.Headway_secs), ""}
 			} else {
@@ -1509,11 +1509,4 @@ func boolToGtfsBool(v bool, full bool) string {
 		return "0"
 	}
 	return ""
-}
-
-func floatEquals(a float64, b float64, e float64) bool {
-	if (a-b) < e && (b-a) < e {
-		return true
-	}
-	return false
 }
