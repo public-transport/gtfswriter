@@ -1,7 +1,7 @@
-github.com/klauspost/compress v1.17.8 h1:YcnTYrq7MikUT7k0Yb5eceMmALQPYBW/Xltxn0NAMnU=
-github.com/klauspost/compress v1.17.8/go.mod h1:Di0epgTjJY877eYKx5yC51cX2A2Vl2ibi7bDH9ttBbw=
-github.com/public-transport/gtfsparser v0.0.0-20240508211334-a2b010870a5e h1:GtM7hS//WJ69KZ7/iR0BjEDYzsYGzEG/NX0jrsrsYmk=
-github.com/public-transport/gtfsparser v0.0.0-20240508211334-a2b010870a5e/go.mod h1:VMH9/q8veNNZb7LLSQwLBLaQaab79LtyU6kx3P+b48Q=
+github.com/klauspost/compress v1.17.10 h1:oXAz+Vh0PMUvJczoi+flxpnBEPxoER1IaAnU/NMPtT0=
+github.com/klauspost/compress v1.17.10/go.mod h1:pMDklpSncoRMuLFrf1W9Ss9KT+0rH90U12bZKk7uwG0=
+github.com/public-transport/gtfsparser v0.0.0-20241003225604-8314ca326414 h1:xndvOqi+3MKH/gHxFucvpqZlAQbdu+j5d7HTMexHlJ4=
+github.com/public-transport/gtfsparser v0.0.0-20241003225604-8314ca326414/go.mod h1:KGGaYsSErOciEFCbJ1QfGna1umXl+PPcdLxw7y5QlR0=
 github.com/twotwotwo/sorts v0.0.0-20160814051341-bf5c1f2b8553 h1:DRC1ubdb3ZmyyIeCSTxjZIQAnpLPfKVgYrLETQuOPjo=
 github.com/twotwotwo/sorts v0.0.0-20160814051341-bf5c1f2b8553/go.mod h1:Rj7Csq/tZ/egz+Ltc2IVpsA5309AmSMEswjkTZmq2Xc=
 github.com/valyala/fastjson v1.6.4 h1:uAUNq9Z6ymTgGhcm0UynUAB6tlbakBrz6CQFax3BXVQ=
