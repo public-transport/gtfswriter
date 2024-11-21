@@ -17,6 +17,7 @@ import (
 	"sort"
 	"strconv"
 	"strings"
+	"time"
 
 	"github.com/klauspost/compress/zip"
 	"github.com/public-transport/gtfsparser"
@@ -371,9 +372,9 @@ func (writer *Writer) writeStops(path string, feed *gtfsparser.Feed) (err error)
 		var row []string
 
 		if v.HasLatLon() {
-			row = []string{strings.Replace(v.Name, "\n", " ", -1), parentStID, v.Code, v.Zone_id, v.Id, strings.Replace(v.Desc, "\n", " ", -1), writer.formatFloat(v.Lat), writer.formatFloat(v.Lon), url, posIntToString(locType), v.Timezone.String(), posIntToString(int(wb)), levelId, v.Platform_code}
+			row = []string{strings.Replace(v.Name, "\n", " ", -1), parentStID, v.Code, v.Zone_id, v.Id, strings.Replace(v.Desc, "\n", " ", -1), writer.formatFloat(v.Lat), writer.formatFloat(v.Lon), url, posIntToString(locType), timezonePointerToString(v.Timezone), posIntToString(int(wb)), levelId, v.Platform_code}
 		} else {
-			row = []string{strings.Replace(v.Name, "\n", " ", -1), parentStID, v.Code, v.Zone_id, v.Id, strings.Replace(v.Desc, "\n", " ", -1), "", "", url, posIntToString(locType), v.Timezone.String(), posIntToString(int(wb)), levelId, v.Platform_code}
+			row = []string{strings.Replace(v.Name, "\n", " ", -1), parentStID, v.Code, v.Zone_id, v.Id, strings.Replace(v.Desc, "\n", " ", -1), "", "", url, posIntToString(locType), timezonePointerToString(v.Timezone), posIntToString(int(wb)), levelId, v.Platform_code}
 		}
 
 		for _, name := range addFieldsOrder {
@@ -1483,6 +1484,14 @@ func timeToString(time gtfs.Time) string {
 	sb.WriteRune(':')
 	fmtIntPadded(int(time.Second), &sb)
 	return sb.String()
+}
+
+// Helper function to write *time.Location that could be nil (don't exist because it is an optional parameter)
+func timezonePointerToString(timezone *time.Location) string {
+	if timezone == nil {
+		return ""
+	}
+	return timezone.String()
 }
 
 func posIntToString(i int) string {
