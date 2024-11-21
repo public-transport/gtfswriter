@@ -215,10 +215,7 @@ func (writer *Writer) writeAgencies(path string, feed *gtfsparser.Feed, attrs *[
 			*attrs = append(*attrs, EntAttr{attr, nil, v, nil})
 		}
 
-		url := ""
-		if v.Url != nil {
-			url = v.Url.String()
-		}
+		url := v.Url.String()
 
 		email := ""
 		if v.Email != nil {
