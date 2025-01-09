@@ -1,8 +1,10 @@
 github.com/klauspost/compress v1.17.11 h1:In6xLpyWOi1+C7tXUUWv2ot1QvBjxevKAaI6IXrJmUc=
 github.com/klauspost/compress v1.17.11/go.mod h1:pMDklpSncoRMuLFrf1W9Ss9KT+0rH90U12bZKk7uwG0=
-github.com/public-transport/gtfsparser v0.0.0-20241121205505-5dda5cd198d6 h1:SQvlR0IsfG/jTklDA2/yGT5MHf3ZXNHaL5ZpkO5gQqo=
-github.com/public-transport/gtfsparser v0.0.0-20241121205505-5dda5cd198d6/go.mod h1:KGGaYsSErOciEFCbJ1QfGna1umXl+PPcdLxw7y5QlR0=
+github.com/public-transport/gtfsparser v0.0.0-20250109140348-38dc4068f18d h1:j8mwAl0OMniFEF8SiQhG88iIIqFfDS009D5MD+qXOPo=
+github.com/public-transport/gtfsparser v0.0.0-20250109140348-38dc4068f18d/go.mod h1:URw8ekYA4VI69dAhw+QKjohGyHCuU/zmR+ynLDVS3Ck=
 github.com/twotwotwo/sorts v0.0.0-20160814051341-bf5c1f2b8553 h1:DRC1ubdb3ZmyyIeCSTxjZIQAnpLPfKVgYrLETQuOPjo=
 github.com/twotwotwo/sorts v0.0.0-20160814051341-bf5c1f2b8553/go.mod h1:Rj7Csq/tZ/egz+Ltc2IVpsA5309AmSMEswjkTZmq2Xc=
 github.com/valyala/fastjson v1.6.4 h1:uAUNq9Z6ymTgGhcm0UynUAB6tlbakBrz6CQFax3BXVQ=
 github.com/valyala/fastjson v1.6.4/go.mod h1:CLCAqky6SMuOcxStkYQvblddUtoRxhYMGLrsQns1aXY=
+golang.org/x/text v0.21.0 h1:zyQAAkrwaneQ066sspRyJaG9VNi/YJ1NfzcGB3hZ/qo=
+golang.org/x/text v0.21.0/go.mod h1:4IBbMaMmOPCJ8SecivzSH54+73PCFmPWxNTLm+vZkEQ=

@@ -222,7 +222,12 @@ func (writer *Writer) writeAgencies(path string, feed *gtfsparser.Feed, attrs *[
 			email = v.Email.Address
 		}
 
-		row := []string{v.Id, strings.Replace(v.Name, "\n", " ", -1), url, v.Timezone.String(), v.Lang.GetLangString(), v.Phone, fareurl, email}
+		langCode := ""
+		if v.Lang != nil {
+			langCode = v.Lang.String();
+		}
+
+		row := []string{v.Id, strings.Replace(v.Name, "\n", " ", -1), url, v.Timezone.String(), langCode, v.Phone, fareurl, email}
 
 		for _, name := range addFieldsOrder {
 			if vald, ok := feed.AgenciesAddFlds[name][v.Id]; ok {
