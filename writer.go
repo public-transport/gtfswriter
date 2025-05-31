@@ -100,6 +100,19 @@ func (writer *Writer) Write(feed *gtfsparser.Feed, path string) error {
 		e = writer.writeAttributions(path, feed, attributions)
 	}
 	if e == nil {
+		for file, csv := range feed.AdditionalCsvFiles {
+			w, e := writer.getFileForWriting(path, file)
+			if e == nil {
+				csvwriter := NewCsvWriter(w)
+				csvwriter.SetHeader(csv.Header, []string{})
+				for _, row := range csv.Data {
+					csvwriter.WriteCsvLine(row)
+				}
+				csvwriter.Flush()
+			}
+		}
+	}
+	if e == nil {
 		for file, data := range feed.AdditionalFiles {
 			w, e := writer.getFileForWriting(path, file)
 			if e == nil {
