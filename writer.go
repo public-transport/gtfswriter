@@ -99,6 +99,14 @@ func (writer *Writer) Write(feed *gtfsparser.Feed, path string) error {
 	if e == nil {
 		e = writer.writeAttributions(path, feed, attributions)
 	}
+	if e == nil {
+		for file, data := range feed.AdditionalFiles {
+			w, e := writer.getFileForWriting(path, file)
+			if e == nil {
+				w.Write(data)
+			}
+		}
+	}
 
 	if e != nil {
 		return e
